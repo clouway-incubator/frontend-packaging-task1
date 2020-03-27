@@ -1,0 +1,59 @@
+@font-face {
+  font-family: Signika;
+  src: url(fonts/Signika.ttf);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Signika;
+}
+
+#calc {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    margin: 0 auto;
+    min-width: 275px;
+    max-width: 650px;
+    width: 70%;
+    box-shadow: 0 0 40px 0px rgba(0, 0, 0, 0.15);
+}
+
+#inputbar {
+    flex: 100%;
+    border: gray 1px solid;
+    background-color: #009688;
+    font-size: 2em;
+    color: #fff;
+    text-align: right;
+    min-height: 60px;
+    min-width: 140px;
+    word-break: break-all;
+    word-wrap: wrap;
+}
+
+.container {
+    margin-bottom: 15px;
+}
+
+.calc-btn {
+    flex: 1;
+    border: gray 1px solid;
+    border-radius: 0;
+    font-size: 2em;
+    margin: 0;
+    padding: 50px;
+    outline: none;
+}
+
+.calc-btn:focus {
+    box-shadow: 1px 2px 8px 0px rgba(0,0,0,0.75);
+}
+
+
+.operations {
+    background-color: #cddc39;
+}
+
+.equals {
+    background-color: #607D8B;
+}
