@@ -1,6 +1,9 @@
+
+@import "./bootstrap.css";
+
 @font-face {
   font-family: Signika;
-  src: url(fonts/Signika.ttf);
+  src: url(../fonts/Signika.ttf);
 }
 
 h1, h2, h3, h4, h5, h6 {
