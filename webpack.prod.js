@@ -7,7 +7,6 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = merge(common, {
     mode: 'production',
-    entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'bin/assets'),
     },

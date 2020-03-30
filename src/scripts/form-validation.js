@@ -1,3 +1,5 @@
+import {setErrorMsg} from './utilities';
+
 let form = document.getElementById('formID');
 form.addEventListener('submit', () => {
     let isValid = validateForm();
@@ -88,9 +90,4 @@ function validateForm() {
     }
 
     return true;
-}
-
-function setErrorMsg(msg, input){
-    var errorMsg = document.getElementById(input);
-    errorMsg.innerHTML = msg;
 }

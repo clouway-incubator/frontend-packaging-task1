@@ -1,3 +1,5 @@
+import {isInputEmpty} from './utilities';
+
 let container = document.getElementById('calc');
 let inputbar = document.getElementById('inputbar');
 
@@ -42,12 +44,5 @@ const regex = /[^\d*][\D]*[^\d*]/g;
     })
 })();
 
-function isInputEmpty(){
-    if (inputbar.innerHTML != undefined && inputbar.innerHTML != '') {
-        return false;
-    }
-    else {
-        return true;
-    }
-}
+
 

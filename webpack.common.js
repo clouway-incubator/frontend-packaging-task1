@@ -3,9 +3,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); 
 
 module.exports = {
-    entry: './src/index.js',
+    entry: {
+        app: './src/index.js',
+        calc: './src/scripts/calculator.js',
+        form: './src/scripts/form-validation.js',
+        validate: './src/scripts/number-validator.js'
+    },
     output: {
-        filename: 'app.bundle.js'
+        filename: '[name].bundle.js'
     },
     module: {
         rules: [
@@ -13,8 +18,7 @@ module.exports = {
                 test: /\.(css|s[ac]ss)$/,
                 use: [
                     MiniCssExtractPlugin.loader, 
-                    'css-loader',
-                    'sass-loader'
+                    'css-loader'
                 ]
             },
             {
@@ -40,9 +44,6 @@ module.exports = {
             {
                 test: /\.html$/,
                 loader: 'html-loader',
-                options: {
-
-                }
             },
             {
                 test: /\.m?js$/,
@@ -57,7 +58,31 @@ module.exports = {
         ],
     },
     plugins: [
-        new HtmlWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: './src/index.html',
+            chunks: ['app']
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'nav.html',
+            template: './src/nav.html',
+            inject: false
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'calculator.html',
+            template: './src/calculator.html',
+            chunks: ['app', 'calc']
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'form.html',
+            template: './src/form.html',
+            chunks: ['app', 'form']
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'validator.html',
+            template: './src/validator.html',
+            chunks: ['app', 'validate']
+        }),
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery'
